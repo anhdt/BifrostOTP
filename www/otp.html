@@ -1,0 +1,47 @@
+<style>
+.logo{height:100%;}
+
+.scan-form {
+  text-align: center;
+  width: 80%;
+  margin: 30% auto 0;
+}
+
+.scan-form input{
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  outline: none;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size:32px !important;
+  font-weight:bold;
+  color:rgba(24,103,194,0.81);
+  text-align:center;
+}
+
+.scan-button {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.setting {
+  display: block;
+  margin: 8px auto 0 auto;
+  font-size: 14px;
+}
+</style>
+
+<ons-toolbar>
+    <div class="center" style="height:100%;"><img src="Logo.png" class="logo" /></div>
+</ons-toolbar>
+
+<div class="scan-form">
+    <input type="text" class="text-input--underbar {{inputClass}}" placeholder="Mật khẩu" value="{{password}}">
+    <br/>
+    <span>Thời gian hiệu lực: <b>{{expiredTime}}</b> giây</span>
+    <br/><br/>
+    <ons-button modifier="large" class="scan-button" ng-click="scanCode()">Quét mã</ons-button>
+    <br/><br/>
+    <ons-button modifier="quiet" class="setting" ng-click="activeTab(1)">Cài đặt</ons-button>
+</div>

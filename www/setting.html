@@ -1,0 +1,82 @@
+<style>
+ons-list-item > ons-icon {
+  margin: 0 4px 0 0;
+  opacity: 0.8;
+}
+
+.list-item-action {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  font-size: 20px;
+  opacity: 0.3;
+}
+
+.list-item-action > ons-icon {
+  margin-top: 14px;
+}
+
+.list-item-note {
+  position: absolute;
+  right: 36px;
+  top: 0px;
+  font-size: 14px;
+}
+
+.list-item-note > .notification {
+  margin-top: 12px;
+}
+
+.lucent {
+  opacity: 0.4;
+}
+
+.copyright{
+    margin:10% auto;
+    width:100%;
+    text-align: center;
+    font-size: smaller;
+}
+
+</style>
+
+<ons-toolbar>
+    <div class="left"><ons-button class="button button--quiet" ng-click="activeTab(0)"><ons-icon icon="ion-chevron-left"></ons-icon></ons-button></div>
+    <div class="center">Cài đặt cấu hình</div>
+</ons-toolbar>
+
+<br />
+
+<ons-list modifier="inset" >
+
+    <ons-list-header>
+        Thông tin cá nhân
+    </ons-list-header>
+    
+    <ons-list-item modifier="chevron" ng-click="setUser()">
+        <ons-icon icon="fa-user" class="text-blue" size="20px"></ons-icon>
+        Tài khoản
+        <span class="list-item-note lucent" ng-bind="info.loginName"></span>
+    </ons-list-item>
+    
+    <ons-list-item modifier="chevron" ng-click="setMask()">
+        <ons-icon icon="fa-shield" class="text-green" size="20px"></ons-icon>
+        Mã hệ thống
+        <span class="list-item-note lucent" ng-bind="info.maskStatus"></span>
+    </ons-list-item>
+    
+    <ons-list-item modifier="chevron" ng-click="deleteInfo()">
+        <ons-icon icon="fa-minus-circle" class="text-red" size="20px"></ons-icon>
+        Xoá thông tin
+    </ons-list-item>
+    
+    <ons-list-item>
+        <ons-icon icon="fa-lock" size="20px"></ons-icon>
+        Thiết lập mã PIN
+        <ons-switch modifier="list-item" ng-model="info.passcodeStatus" ng-change="updatePIN()"></ons-switch>
+    </ons-list-item>
+
+</ons-list>
+
+<div class="copyright">Phiên bản 1.0.4 &copy; 2015 Bifröst</div>
+

@@ -1,0 +1,88 @@
+<style>
+    .pincode{width:80%;margin:20% auto 10%;}
+    .pincode .pin-item{border-bottom:solid 1px #cecece;text-align:center;margin:0 5% 0 0;padding:10px 0;}
+    .pincode .pin-item:last-child{margin:0;}
+    
+    .keypad{width:50%;margin:auto;}
+    .keypad .number-row{margin:20px 0 0 0;}
+    .keypad .number-row .number-item{margin:0 5% 0 0;}
+    .keypad .number-row .number-item:last-child{margin:0;}
+
+</style>
+
+<div ng-controller="PinController" ng-init="init()">
+    <ons-toolbar>
+        <div class="left"><ons-button class="button button--quiet" ng-if="buttonBackVisible" ng-click="hidePIN()"><ons-icon icon="ion-chevron-left"></ons-icon> Huỷ</ons-button></div>
+        <div class="center">{{title}}</div>
+    </ons-toolbar>
+    
+    <div class="pincode">
+        <ons-row align="center">
+            <ons-col class="pin-item" align="center" width="20%">
+                <ons-icon icon="circle" size="10px" ng-if="code.length >= 1"></ons-icon>
+                <ons-icon icon="circle" size="0px" ng-if="code.length < 1"></ons-icon>
+            </ons-col>
+            <ons-col class="pin-item" align="center" width="20%">
+                <ons-icon icon="circle" size="10px" ng-if="code.length >= 2"></ons-icon>
+                <ons-icon icon="circle" size="0px" ng-if="code.length < 2"></ons-icon> 
+            </ons-col>
+            <ons-col class="pin-item" align="center" width="20%">
+                <ons-icon icon="circle" size="10px" ng-if="code.length >= 3"></ons-icon>
+                <ons-icon icon="circle" size="0px" ng-if="code.length < 3"></ons-icon> 
+            </ons-col>
+            <ons-col class="pin-item" align="center" width="20%">
+                <ons-icon icon="circle" size="10px" ng-if="code.length >= 4"></ons-icon>
+                <ons-icon icon="circle" size="0px" ng-if="code.length < 4"></ons-icon> 
+            </ons-col>
+        </ons-row>
+    
+    </div>
+    
+    <div class="keypad">
+        <ons-row class="number-row">
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('1')">1</ons-button>  
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('2')">2</ons-button>
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('3')">3</ons-button>
+            </ons-col>
+        </ons-row>
+        <ons-row class="number-row">
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('4')">4</ons-button>
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('5')">5</ons-button>
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('6')">6</ons-button>
+            </ons-col>
+        </ons-row>
+        <ons-row class="number-row">
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('7')">7</ons-button>          
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('8')">8</ons-button>            
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('9')">9</ons-button>
+            </ons-col>
+        </ons-row>
+        <ons-row class="number-row">
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="deleteCode()"><ons-icon icon="ion-close-round"></ons-icon></ons-button>
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="addCode('0')">0</ons-button>
+            </ons-col>
+            <ons-col class="number-item" align="center" width="30%">
+                <ons-button modifier="outline large" ng-click="removeCode()"><ons-icon icon="ion-arrow-left-a"></ons-icon></ons-button>
+            </ons-col>
+        </ons-row>
+    </div>
+
+</div>
