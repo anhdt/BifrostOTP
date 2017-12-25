@@ -1,16 +1,17 @@
 {
     "plugins": [
-        "mobi.monaca.plugins.Monaca",
-        "mobi.monaca.plugins.BarcodeScanner"
+        "mobi.monaca.plugins.Monaca@3.1.0",
+        "mobi.monaca.plugins.BarcodeScanner@1.0.3"
     ],
     "framework_version": "3.5",
-    "xcode_version": "6",
-    "cordova_version": "5.2",
+    "xcode_version": "7",
+    "cordova_version": "6.2",
     "plugin_settings": [],
     "external_plugins": [
-        "cordova-plugin-splashscreen@2.1.0",
-        "cordova-plugin-camera@1.2.0",
-        "cordova-plugin-vibration@1.2.0",
-        "cordova-plugin-whitelist@1.0.0"
+        "cordova-plugin-splashscreen@3.2.2",
+        "cordova-plugin-camera@2.2.0",
+        "cordova-plugin-vibration@2.1.1",
+        "cordova-plugin-whitelist@1.2.2",
+        "cordova-custom-config@2.0.3"
     ]
 }
